@@ -91,7 +91,7 @@
 
             if (metroCostPerDay > fares['cap-daily']) {
                 metroCostPerDay = fares['cap-daily'];
-                resultsOutput = `${resultsOutput}Daily Cap Reached!\r`;
+                resultsOutput = `${resultsOutput}Daily Cap of ${fares['cap-daily']} Reached!\r`;
             }
 
             resultsOutput = `${resultsOutput}Daily Cost: \$${metroCostPerDay}\r`;
@@ -101,8 +101,8 @@
             resultsOutput = `${resultsOutput}\$${metroCostPerDay} x ${data.get('metroDays')} days per week = \$${metroCostPerWeek}\r`;
 
             if (metroCostPerWeek > fares['cap-weekly']) {
-                metroCostPerWeek = fares['cap-daily'];
-                resultsOutput = `${resultsOutput}Weekly Cap Reached!\r`;
+                metroCostPerWeek = fares['cap-weekly'];
+                resultsOutput = `${resultsOutput}Weekly Cap of ${fares['cap-weekly']} Reached!\r`;
             }
 
             resultsOutput = `${resultsOutput}Weekly Cost: \$${metroCostPerWeek}\r`;
