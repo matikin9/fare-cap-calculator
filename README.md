@@ -10,7 +10,7 @@
 <div id="results"></div>
 
 <script>
-    document.querySelector('#btnCalculate').addEventHandler('click', function(e) {
+    document.querySelector('#btnCalculate').addEventListener('click', function(e) {
         document.querySelector('#results').innerText = 'Clicked!';
     });
 </script>
