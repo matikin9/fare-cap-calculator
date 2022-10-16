@@ -46,9 +46,11 @@
     <button type="submit" id="btnCalculate">Calculate</button>
 </form>
 
-## Final Cost
+## Log
 
-<div id="resultText"></div>
+<div id="logText"></div>
+
+## Resulst
 
 <script type="text/javascript">
     const fareStructure = {
@@ -64,16 +66,28 @@
         }
     };
     const form = document.querySelector('#theForm');
+    const log = document.querySelector('div#logText')
     const results = document.querySelector('div#resultText');
 
     document.querySelector('#theForm').addEventListener('submit', (e) => {
         const data = new FormData(form);
-        let output = '';
+        let logOutput = '';
+        let resultsOutput = '';
 
         for (const entry of data) {
-            output = `${output}${entry[0]}=${entry[1]}\r`;
+            logOutput = `${logOutput}${entry[0]}=${entry[1]}\r`;
         }
-        results.innerText = output;
+        log.innerText = logOutput;
+
+        let fares = fareStructure[data.get('riderType')];
+        let metroPerDay = fares['base'] * data.get('metroRides');
+
+        results = `${resultsOutput}Regular base fare: \$${fares['base']}\r`;
+
+        results = `${resultsOutput}\$${fares['base']} x ${data.get('metroRides')} trips per day = \$${metroPerDay}\r`;
+
+        results.innerText = resultsOutput;
+
         e.preventDefault();
     }, false);
 </script>
