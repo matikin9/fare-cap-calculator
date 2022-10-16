@@ -11,6 +11,7 @@
 
 <script>
     document.querySelector('#btnCalculate').addEventListener('click', function(e) {
-        document.querySelector('#results').innerText = 'Clicked!';
+        e.preventDefault();
+        document.querySelector('div#results').innerText = 'Clicked!';
     });
 </script>
