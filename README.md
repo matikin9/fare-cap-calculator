@@ -12,6 +12,8 @@
 <script>
     document.querySelector('#btnCalculate').addEventListener('click', function(e) {
         e.preventDefault();
+
+        let result = calculateTotalCost();
         document.querySelector('div#resultText').innerText = '$' + result;
     });
 
