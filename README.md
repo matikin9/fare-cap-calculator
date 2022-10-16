@@ -53,13 +53,13 @@
 <script>
     const fareStructure = {
         "regular": {
-            "base": 2
+            "base": 2,
             "cap-daily": 6,
             "cap-weekly": 20
         },
         "other": {
             "base": 1,
-            "cap-daily": 3
+            "cap-daily": 3,
             "cap-weekly": 8
         }
     };
