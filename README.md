@@ -74,20 +74,25 @@
         let logOutput = '';
         let resultsOutput = '';
 
-        for (const entry of data) {
-            logOutput = `${logOutput}${entry[0]}=${entry[1]}\r`;
+        try {
+            for (const entry of data) {
+                logOutput = `${logOutput}${entry[0]}=${entry[1]}\r`;
+            }
+            log.innerText = logOutput;
+
+            let fares = fareStructure[data.get('riderType')];
+            let metroPerDay = fares['base'] * data.get('metroRides');
+
+            resultsOutput = `${resultsOutput}Regular base fare: \$${fares['base']}\r`;
+
+            resultsOutput = `${resultsOutput}\$${fares['base']} x ${data.get('metroRides')} trips per day = \$${metroPerDay}\r`;
+
+            results.innerText = resultsOutput;
+        } catch (error) {
+            log.innerText = error;
+        } finally {
+            e.preventDefault();
         }
-        log.innerText = logOutput;
 
-        let fares = fareStructure[data.get('riderType')];
-        let metroPerDay = fares['base'] * data.get('metroRides');
-
-        results = `${resultsOutput}Regular base fare: \$${fares['base']}\r`;
-
-        results = `${resultsOutput}\$${fares['base']} x ${data.get('metroRides')} trips per day = \$${metroPerDay}\r`;
-
-        results.innerText = resultsOutput;
-
-        e.preventDefault();
     }, false);
 </script>
