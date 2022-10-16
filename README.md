@@ -7,11 +7,11 @@
 
 ## Results
 
-<div id="results"></div>
+<div id="resultText"></div>
 
 <script>
     document.querySelector('#btnCalculate').addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector('div#results').innerText = 'Clicked!';
+        document.querySelector('div#resultText').innerText = 'Clicked!';
     });
 </script>
