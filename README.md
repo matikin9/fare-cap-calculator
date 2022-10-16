@@ -50,7 +50,9 @@
 
 <div id="logText"></div>
 
-## Resulst
+## Results
+
+<div id="resultText"></div>
 
 <script type="text/javascript">
     const fareStructure = {
