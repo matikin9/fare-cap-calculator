@@ -12,6 +12,19 @@
 <script>
     document.querySelector('#btnCalculate').addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector('div#resultText').innerText = 'Clicked!';
+        document.querySelector('div#resultText').innerText = '$' + result;
     });
+
+    function calculateTotalCost() {
+        let result = 0;
+        let metroRidesPerDay = document.querySelector('input#metroRides').value;
+        let baseRegularCost = 2;
+
+        result = baseRegularCost * metroRidesPerDay;
+
+        if (result > 6) {
+            result = 6;
+        }
+        return result;
+    }
 </script>
