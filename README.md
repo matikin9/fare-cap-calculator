@@ -1,4 +1,4 @@
-# metro-fare-capping-tool
+# fare-cap-calculator
 
 <form id="theForm">
     <fieldset>
