@@ -85,16 +85,16 @@
             let fares = fareStructure[data.get('riderType')];
             let metroCostPerDay = fares['base'] * data.get('metroRides');
 
-            resultsOutput = `${resultsOutput}Regular base fare: \$${fares['base']}\r`;
+            resultsOutput = `${resultsOutput}Regular base fare: \$${fares['base']}\r\r`;
 
             resultsOutput = `${resultsOutput}\$${fares['base']} x ${data.get('metroRides')} trips per day = \$${metroCostPerDay}\r`;
 
             if (metroCostPerDay > fares['cap-daily']) {
                 metroCostPerDay = fares['cap-daily'];
-                resultsOutput = `${resultsOutput}Daily Cap of ${fares['cap-daily']} Reached!\r`;
+                resultsOutput = `${resultsOutput}Daily Cap of \$${fares['cap-daily']} Reached!\r`;
             }
 
-            resultsOutput = `${resultsOutput}Daily Cost: \$${metroCostPerDay}\r`;
+            resultsOutput = `${resultsOutput}Daily Cost: \$${metroCostPerDay}\r\r`;
 
             let metroCostPerWeek = metroCostPerDay * data.get('metroDays');
 
@@ -102,7 +102,7 @@
 
             if (metroCostPerWeek > fares['cap-weekly']) {
                 metroCostPerWeek = fares['cap-weekly'];
-                resultsOutput = `${resultsOutput}Weekly Cap of ${fares['cap-weekly']} Reached!\r`;
+                resultsOutput = `${resultsOutput}Weekly Cap of \$${fares['cap-weekly']} Reached!\r`;
             }
 
             resultsOutput = `${resultsOutput}Weekly Cost: \$${metroCostPerWeek}\r`;
