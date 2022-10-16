@@ -68,6 +68,7 @@
 
     document.querySelector('#theForm').addEventListener('submit', (e) => {
         const data = new FormData(form);
+        let output = '';
 
         for (const entry of data) {
             output = `${output}${entry[0]}=${entry[1]}\r`;
