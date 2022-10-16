@@ -50,7 +50,7 @@
 
 <div id="resultText"></div>
 
-<script>
+<script type="text/javascript">
     const fareStructure = {
         "regular": {
             "base": 2,
@@ -63,20 +63,16 @@
             "cap-weekly": 8
         }
     };
+    const form = document.querySelector('#theForm');
+    const results = document.querySelector('div#resultText');
 
     document.querySelector('#theForm').addEventListener('submit', (e) => {
-        calculateTotalCost();
-        e.preventDefault();
-    }, false);
-
-    function calculateTotalCost() {
-        const form = document.querySelector('#theForm');
-        const results = document.querySelector('div#resultText');
         const data = new FormData(form);
 
         for (const entry of data) {
             output = `${output}${entry[0]}=${entry[1]}\r`;
         }
         results.innerText = output;
-    }
+        e.preventDefault();
+    }, false);
 </script>
